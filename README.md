@@ -1,22 +1,37 @@
-# Getting Started
+# Manage Case Assignment
 
-### Reference Documentation
-For further reference, please consider the following sections:
+This micro-service provides a set of APIs for reply video streaming. 
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/gradle-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+**TODO**: add more description / architecture diagram etc 
 
-### Guides
-The following guides illustrate how to use some features concretely:
+## Getting Started
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+### Prerequisites
+- [JDK 11](https://java.com)
 
-### Additional Links
-These additional references should also help you:
+### Building
+The project uses [Gradle](https://gradle.org) as a build tool. It already contains
+`./gradlew` wrapper script, so there's no need to install gradle.
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+To build the project execute the following command:
+```bash
+./gradlew clean build
+```
 
+### Running
+Run the application by executing:
+```bash
+./gradlew bootRun
+```
+
+## API documentation
+API documentation is provided with Swagger.  
+Swagger UI is available here: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)  
+
+## Developing
+
+### Unit tests
+To run all unit tests execute the following command:
+```bash
+./gradlew clean test
+```

@@ -18,19 +18,19 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(value = {InvalidRequestException.class})
     ResponseEntity<Object> handleBadRequest(RuntimeException ex, WebRequest request) {
         LOG.error("Exception thrown '{}'", ex.getMessage(), ex);
-        return handleExceptionInternal(ex, ex, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+        return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
 
     @ExceptionHandler(value = {CardNotRegisteredException.class})
     ResponseEntity<Object> handleNotFoundRequest(RuntimeException ex, WebRequest request) {
         LOG.error("Exception thrown '{}'", ex.getMessage(), ex);
-        return handleExceptionInternal(ex, ex, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+        return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 
     @ExceptionHandler(value = {UserAlreadyRegisteredException.class})
     ResponseEntity<Object> handleForbiddenRequest(RuntimeException ex, WebRequest request) {
         LOG.error("Exception thrown '{}'", ex.getMessage(), ex);
-        return handleExceptionInternal(ex, ex, new HttpHeaders(), HttpStatus.FORBIDDEN, request);
+        return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(), HttpStatus.FORBIDDEN, request);
     }
 }
 
